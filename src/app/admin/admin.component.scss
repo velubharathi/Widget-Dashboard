@@ -1,0 +1,151 @@
+h1, h2, h3, h4, h5, h6 {
+    margin: 8px 0;
+  }
+
+  .container {
+      background-color:  #C6EBEC;
+  }
+  .pageHeading {
+        float: left;
+        width: 85%;
+  }
+
+  .logoutDiv {
+        float: left;
+        width: 15%;
+  }
+
+  .pageHeading h3 {
+    margin-left: 1%;
+    }
+
+  .leftNav {
+    float: left;
+    width: 15%;
+    background-color:#FFFFFF;  
+  }
+.leftNavShrunk {
+    width: 2%;
+}
+
+.dashBoardItem {
+    background-color:#2199e8;
+    width: 100%;
+    height: 30px; 
+    color: #FFFFFF;
+}
+
+.slideIcon {
+    background-color: gray;
+    width: 100%;
+    height: 30px;
+    cursor: pointer;
+}
+
+.slideIcon>div {
+    float: right;
+    width: 20px;
+    position: relative;
+    top: 9%;
+    font-weight: bold;
+    font-size: 17px;
+}
+.navLinks {
+height: 90vh;
+}
+
+.contentContainer {
+float: right;
+width: 85%;
+background-color: #E2F0F0;
+}
+.contentContainerExp {
+    width: 98%;
+}
+
+.widgetsContainer {
+width: 100%;
+float: left;
+}
+
+.widget {
+    width: 160px;
+    height: 160px;
+    background-color: #FFFFFF;
+    margin:15px;
+    border-radius: 15px;
+    text-align: center;
+    float: left;
+}
+
+.icon {
+margin-top: 15%;
+}
+
+.imgIcon {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.domainName {
+    font-weight: 500;
+}
+.candidateCount {
+    font-weight: bold;
+    font-size: 12px;
+}
+.tableContainer{
+    margin-left: 1%;
+    float: left;
+    width: 99%;
+    border: 2px solid #cccccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    border-style: outset;
+    box-shadow: 5px 10px #cccccc; 
+}
+
+.spaceAboveTable {
+    height:5px;
+}
+
+.caption {
+    height: 50px;
+    background-color: #FFFFFF;
+    border-radius: 4px;
+    color: #2199e8;
+}
+.caption h3 {
+    padding-top: 11px;
+    padding-left: 10px;
+}
+.tableContainer table{
+width:100%; 
+background-color: #FFFFFF; 
+border: 1px solid gray;
+border-radius: 5px;  
+}
+
+.tableContainer table thead tr {
+    background: #2199e8;
+    color: #fefefe;
+    font-weight: bold;
+}
+
+.tableContainer table tr {
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+table, th, td {
+    // border: 1px solid black;
+    border-collapse: collapse;
+  }
+  table tbody>tr:nth-child(even){
+background-color: #ccf2ff;
+  }
+
+  
+
+

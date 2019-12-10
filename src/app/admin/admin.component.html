@@ -1,0 +1,101 @@
+
+<div class='container'>
+    <div class='leftNav' [ngClass]="{'leftNavShrunk': !adminModel?.menuExpanded}">
+        <div class='navLinks'>
+       <div class='dashBoardItem'>
+            <img class="" src='./assets/icons/dashboard_icon1.png' width='25' height='25'/>
+Dashboard
+       </div>
+        </div>
+         <div class='slideIcon' (click)='expandMenu();'>
+           <div *ngIf='adminModel?.menuExpanded; else shrunkMenu'>
+                    <span> < </span>
+           </div>
+           <ng-template #shrunkMenu>
+           <div >
+                <span> > </span>
+           </div>
+        </ng-template>
+
+         </div>
+    </div>
+    <div class='contentContainer' [ngClass]="{'contentContainerExp' : !adminModel?.menuExpanded}">
+          <div class='pageHeading'><h3>Recruiter Dashboard</h3></div>
+          <div> 
+            <button name='logout' class='buttonStyle' (click)='logOutUser()' >Logout</button>
+          </div>
+
+        <div class='widgetsContainer'>
+            
+        <div class='widget' #defaultwidget>
+
+            <div class='icon'>
+                <img class="imgIcon" src='./assets/icons/cloud_icon.jpg' width='50' height='50'/>
+            </div>
+            <div class='domainName'>
+                    Total Candidates
+            </div>
+            <span class='candidateCount'>
+                  {{ total }}
+            </span> <br/>
+            Candidates
+        </div>
+        <div *ngFor='let candidateArr of adminModel?.newList;'>
+        <div class='widget'>
+            <div class='icon' [ngSwitch] ='candidateArr[0].domain'>
+                <img *ngSwitchCase="'Back End Engineer'" class="imgIcon" src='./assets/icons/backend_icon.jpg' width='50' height='50'/>
+                <img *ngSwitchCase="'Front End Engineer'" class="imgIcon" src='./assets/icons/frontend_icon.png' width='50' height='50'/>
+                <img *ngSwitchCase="'Full Stack Engineer'" class="imgIcon" src='./assets/icons/fullstack_icon.jpg' width='50' height='50'/>
+                <img *ngSwitchCase="'Cloud Engineer'" class="imgIcon" src='./assets/icons/cloud_icon.jpg' width='50' height='50'/>
+            </div>
+            <div class='domainName'>
+                 {{candidateArr[0].domain}}
+            </div>
+            <span class='candidateCount'>
+                  {{ candidateArr.length }}
+
+            </span> <br/>
+            Candidates
+
+        </div>
+    </div>
+            
+
+        </div>
+
+        <div class='tableContainer'>
+            <div class='caption'>
+                <h3>Scheduled List</h3>
+            </div>
+            <div class='spaceAboveTable'></div>
+            
+            <table class='widgetTable' >
+<thead>
+
+    <tr>
+        <td>Candidate ID</td>
+        <td>Name</td>
+        <td>Domain</td>
+        <td>Years of Exp</td>
+        <td>Recuiter Name</td>
+        <td>Interview Type</td>
+
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor='let data of adminModel?.candidateList | paginate: { itemsPerPage: 5, currentPage: p, totalItems: total }'>
+        <td> {{data.candidateId}}</td>
+        <td> {{data.name}}</td>
+        <td> {{data.domain}}</td>
+        <td> {{data.yearOfExperience}}</td>
+        <td> {{data.recruiterName}}</td>
+        <td> {{data.interviewType}}</td>
+    </tr>
+</tbody>
+
+            </table>
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </div>
+    </div>
+
+</div>

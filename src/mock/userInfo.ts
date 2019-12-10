@@ -1,0 +1,5 @@
+
+
+function authentication() {
+    return true;
+}

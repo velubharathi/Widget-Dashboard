@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
 
       })
     } else {
-      this.message = 'Prvide Username and Password';
+      this.message = 'Provide Username and Password';
     }
 
   }
